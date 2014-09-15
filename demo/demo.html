@@ -11,56 +11,6 @@
 <script type="text/javascript" src="../lib/canvas.js"></script>
 <script type="text/javascript">
 	$(function() {
-/**		init($("#myflow")[0],{
-							basePath : "",
-							//restore : eval("({states:{rect1:{type:'task',text:{text:'服务器B'}, attr:{ x:508, y:157, width:100, height:50}, props:{text:{value:'服务器B'},assignee:{value:''},form:{value:''},desc:{value:''}}},rect2:{type:'task',text:{text:'服务器C'}, attr:{ x:715, y:164, width:100, height:50}, props:{text:{value:'服务器C'},assignee:{value:''},form:{value:''},desc:{value:''}}},rect3:{type:'task',text:{text:'服务器E'}, attr:{ x:304, y:320, width:100, height:50}, props:{text:{value:'服务器E'},assignee:{value:''},form:{value:''},desc:{value:''}}},rect4:{type:'task',text:{text:'服务器F'}, attr:{ x:448, y:318, width:100, height:50}, props:{text:{value:'服务器F'},assignee:{value:''},form:{value:''},desc:{value:''}}},rect5:{type:'task',text:{text:'服务器G'}, attr:{ x:582, y:319, width:100, height:50}, props:{text:{value:'服务器G'},assignee:{value:''},form:{value:''},desc:{value:''}}},rect6:{type:'task',text:{text:'服务器H'}, attr:{ x:709, y:316, width:100, height:50}, props:{text:{value:'服务器H'},assignee:{value:''},form:{value:''},desc:{value:''}}},rect7:{type:'task',text:{text:'服务器I'}, attr:{ x:845, y:317, width:100, height:50}, props:{text:{value:'服务器I'},assignee:{value:''},form:{value:''},desc:{value:''}}},rect8:{type:'task',text:{text:'服务器D'}, attr:{ x:172, y:320, width:100, height:50}, props:{text:{value:'服务器D'},assignee:{value:''},form:{value:''},desc:{value:''}}},rect9:{type:'task',text:{text:'服务器J'}, attr:{ x:976, y:319, width:100, height:50}, props:{text:{value:'服务器J'},assignee:{value:''},form:{value:''},desc:{value:''}}},rect10:{type:'task',text:{text:'服务器K'}, attr:{ x:1156, y:322, width:100, height:50}, props:{text:{value:'服务器K'},assignee:{value:''},form:{value:''},desc:{value:''}}},rect11:{type:'task',text:{text:'服务器A'}, attr:{ x:509, y:39, width:100, height:50}, props:{text:{value:'服务器A'},assignee:{value:''},form:{value:''},desc:{value:''}}},rect12:{type:'task',text:{text:'服务器L'}, attr:{ x:583, y:434, width:100, height:50}, props:{text:{value:'服务器L'},assignee:{value:''},form:{value:''},desc:{value:''}}},rect13:{type:'task',text:{text:'服务器M'}, attr:{ x:420, y:545, width:100, height:50}, props:{text:{value:'服务器M'},assignee:{value:''},form:{value:''},desc:{value:''}}},rect14:{type:'task',text:{text:'服务器N'}, attr:{ x:741, y:543, width:100, height:50}, props:{text:{value:'服务器N'},assignee:{value:''},form:{value:''},desc:{value:''}}}},paths:{path15:{from:'rect11',to:'rect1', dots:[],text:{text:''},textPos:{x:0,y:-10}, props:{text:{value:''}}},path16:{from:'rect1',to:'rect8', dots:[],text:{text:''},textPos:{x:0,y:-10}, props:{text:{value:''}}},path17:{from:'rect1',to:'rect3', dots:[],text:{text:''},textPos:{x:0,y:-10}, props:{text:{value:''}}},path18:{from:'rect1',to:'rect4', dots:[],text:{text:''},textPos:{x:0,y:-10}, props:{text:{value:''}}},path19:{from:'rect1',to:'rect5', dots:[],text:{text:''},textPos:{x:0,y:-10}, props:{text:{value:''}}},path20:{from:'rect1',to:'rect6', dots:[],text:{text:''},textPos:{x:0,y:-10}, props:{text:{value:''}}},path21:{from:'rect1',to:'rect7', dots:[],text:{text:''},textPos:{x:0,y:-10}, props:{text:{value:''}}},path22:{from:'rect1',to:'rect9', dots:[],text:{text:''},textPos:{x:0,y:-10}, props:{text:{value:''}}},path23:{from:'rect1',to:'rect10', dots:[],text:{text:''},textPos:{x:0,y:-10}, props:{text:{value:''}}},path24:{from:'rect2',to:'rect10', dots:[],text:{text:''},textPos:{x:0,y:-10}, props:{text:{value:''}}},path25:{from:'rect2',to:'rect9', dots:[],text:{text:''},textPos:{x:0,y:-10}, props:{text:{value:''}}},path26:{from:'rect2',to:'rect7', dots:[],text:{text:''},textPos:{x:0,y:-10}, props:{text:{value:''}}},path27:{from:'rect2',to:'rect6', dots:[],text:{text:''},textPos:{x:0,y:-10}, props:{text:{value:''}}},path28:{from:'rect2',to:'rect5', dots:[],text:{text:''},textPos:{x:0,y:-10}, props:{text:{value:''}}},path29:{from:'rect2',to:'rect4', dots:[],text:{text:''},textPos:{x:0,y:-10}, props:{text:{value:''}}},path30:{from:'rect2',to:'rect3', dots:[],text:{text:''},textPos:{x:0,y:-10}, props:{text:{value:''}}},path31:{from:'rect2',to:'rect8', dots:[],text:{text:''},textPos:{x:0,y:-10}, props:{text:{value:''}}},path32:{from:'rect5',to:'rect12', dots:[],text:{text:''},textPos:{x:0,y:-10}, props:{text:{value:''}}},path33:{from:'rect12',to:'rect13', dots:[],text:{text:''},textPos:{x:0,y:-10}, props:{text:{value:''}}},path34:{from:'rect12',to:'rect14', dots:[],text:{text:''},textPos:{x:0,y:-10}, props:{text:{value:''}}},path35:{from:'rect4',to:'rect12', dots:[],text:{text:''},textPos:{x:0,y:-10}, props:{text:{value:''}}},path36:{from:'rect6',to:'rect12', dots:[],text:{text:''},textPos:{x:0,y:-10}, props:{text:{value:''}}},path37:{from:'rect3',to:'rect12', dots:[],text:{text:''},textPos:{x:0,y:-10}, props:{text:{value:''}}},path38:{from:'rect8',to:'rect12', dots:[],text:{text:''},textPos:{x:0,y:-10}, props:{text:{value:''}}},path39:{from:'rect7',to:'rect12', dots:[],text:{text:''},textPos:{x:0,y:-10}, props:{text:{value:''}}},path40:{from:'rect9',to:'rect12', dots:[],text:{text:''},textPos:{x:0,y:-10}, props:{text:{value:''}}},path41:{from:'rect10',to:'rect12', dots:[],text:{text:''},textPos:{x:0,y:-10}, props:{text:{value:''}}}},props:{props:{name:{value:'新建流程'},key:{value:''},desc:{value:''}}}})"),
-							restore:eval("({states:{rect1:{type:'start',text:{text:'路由'}, attr:{ x:560, y:99, width:50, height:50}, props:{text:{value:'路由'},temp1:{value:''},temp2:{value:''}}},rect2:{type:'fork',text:{text:'不可用'}, attr:{ x:328, y:204, width:50, height:50}, props:{text:{value:'不可用'},temp1:{value:''},temp2:{value:''}}},rect3:{type:'join',text:{text:'警告'}, attr:{ x:812, y:149, width:50, height:50}, props:{text:{value:'警告'},temp1:{value:''},temp2:{value:''}}},rect4:{type:'state',text:{text:'交换机'}, attr:{ x:392, y:402, width:50, height:50}, props:{text:{value:'交换机'},temp1:{value:''},temp2:{value:''}}},rect5:{type:'task',text:{text:'危险'}, attr:{ x:724, y:355, width:50, height:50}, props:{text:{value:'危险'},assignee:{value:''},form:{value:''},desc:{value:''}}}},paths:{path6:{from:'rect1',to:'rect3', dots:[],text:{text:''},textPos:{x:0,y:-10}, props:{text:{value:''}}},path7:{from:'rect3',to:'rect5', dots:[],text:{text:''},textPos:{x:0,y:-10}, props:{text:{value:''}}},path8:{from:'rect5',to:'rect4', dots:[],text:{text:''},textPos:{x:0,y:-10}, props:{text:{value:''}}},path9:{from:'rect4',to:'rect2', dots:[],text:{text:''},textPos:{x:0,y:-10}, props:{text:{value:''}}},path10:{from:'rect2',to:'rect1', dots:[],text:{text:''},textPos:{x:0,y:-10}, props:{text:{value:''}}},path11:{from:'rect4',to:'rect1', dots:[],text:{text:''},textPos:{x:0,y:-10}, props:{text:{value:''}}},path12:{from:'rect1',to:'rect5', dots:[],text:{text:''},textPos:{x:0,y:-10}, props:{text:{value:''}}},path13:{from:'rect5',to:'rect2', dots:[],text:{text:''},textPos:{x:0,y:-10}, props:{text:{value:''}}},path14:{from:'rect2',to:'rect3', dots:[],text:{text:''},textPos:{x:0,y:-10}, props:{text:{value:''}}},path15:{from:'rect3',to:'rect4', dots:[],text:{text:''},textPos:{x:0,y:-10}, props:{text:{value:''}}}},props:{props:{name:{value:'新建流程'},key:{value:''},desc:{value:''}}}})"),
-							tools : {
-								save : {
-									onclick : function(data) {
-										alert('save:\n' + data);
-									}
-								}
-							}
-						});*/
-/**		a = {};
-		a.aaa = 23;
-		a.bbb = "rfgdg";
-		a.ccc = 67890;
-		var tt = {abd:"asdfsfs",ioasd:56789}
-		var obj = new Object();
-		a.obj = obj;
-		tt.obj = obj;
-		delete tt.obj;
-		a.ddd = tt;
-		a.ddd.a = 90;
-		a[3] = 9;
-		delete a["sdsrghf"];
-		alert("as length is "+sizeof(a))
-		invoke(aaa(1));
-		function invoke(a){
-			if(a) a();
-		}
-		function aaa(a){
-			alert(a);
-		}
-		function sizeof(a){
-			var s = 0;
-			for(var i in a){
-				s++;
-			}
-			return s;
-		}
-		function Obj(){
-			this.id = 0x345678;
-			this.f = function(){
-				alert(this.id);
-			}
-			alert("waimian");
-		}
-		new Obj().f();
-		alert(JSON.stringify(a))
-		*/
 		function sizeof(a){
 			var s = 0;
 			for(var i in a){
