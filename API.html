@@ -1,0 +1,120 @@
+<body>
+<head>
+<title>canvas API</title>
+<style>
+	body{
+		background:url(API_BG1.jpg);
+	}
+	#title{
+		text-align:center;
+	}
+	a{
+		text-decoration:none;
+	}
+</style>
+</head>
+<div id="title"><h1>Canvas API</h1>@outher <a href="javascript:alert('Auther:刘鹏\nQQ:2572530269\nTel:18111249357\nEmail:kalpka@sina.cn')">Liupeng</a></div>
+<hr/>
+<h2>Canvas:画布对象</h2>
+<B>变量C:</B>内部this变量</br>
+<B>dom:</B>承载画布的dom对象</br>
+<B>isEditable:</B>组件内元素是否可编辑,包括添加、删除、拖拽</br>
+<B>edit:</B>容器编辑器插件</br>
+<B>raphael:</B>Raphael对象</br>
+<B>containers:</B>组件中所有的Container</br>
+<B>topContainers:</B>组件中的顶层Container</br>
+<B>lines:</B>组件中所有的Line</br>
+<B>idMap:</B>ID映射器</br>
+<B>memento:</B>备忘录(采用梯式链表结构)</br>
+<B>backMemento:</B>防抖动备忘系数(drag低于此不备忘)</br>
+<B>isAuto:</B>自动调用还是手动调用(当restore时不备忘)</br>
+<B>clickNode:</B>点击的对象</br>
+<B>seq:</B>ID生成序列</br>
+<B>coe:</B>视窗比例系数</br>
+<B>init():</B>初始化</br>
+<B>setSize():</B>设置画布大小,调用此方法会导致视窗恢复为100%,如果想视窗不变，使用raphael的setSize</br>
+<B>setViewBox():</B>设置视窗,并计算出coe</br>
+<B>container(x,y,w,h):</B>生成container</br>
+<B>onLine(f,t,r):</B>为两个容器连线</br>
+<B>remove():</B>删除clickNode对象</br>
+<B>nextSeq():</B>得到下一个ID</br>
+<B>currSeq():</B>得到当前最新ID</br>
+<B>getNode():</B>得到当前点击对象</br>
+<B>setNode(n):</B>设置当前点击对象</br>
+<B>getData():</B>序列化</br>
+<B>restore(d):</B>反序列化</br>
+<B>connPoint函数:</B>计算路径交点</br>
+
+<h2>Line:连线对象(连线保存两边对象,对象保存自身的连线集合)</h2>
+<B>_l:</B>内部this变量</br>
+<B>f:</B>from Container</br>
+<B>t:</B>to Container</br>
+<B>ID:</B>唯一标识ID(用于container中通过该ID找到Line)</br>
+<B>path:</B>连线的path</br>
+<B>Point函数:</B>计算移动后的路径起点与终点</br>
+<B>attr():</B>path.attr()</br>
+<B>remove():</B>删除</br>
+<B>getData():</B>序列化</br>
+
+<h2>Container:容器对象</h2>
+<B>C:</B>内部this变量</br>
+<B>x:</B>容器x坐标</br>
+<B>y:</B>容器y坐标</br>
+<B>w:</B>容器width</br>
+<B>h:</B>容器height</br>
+<B>ID:</B>容器唯一标识ID</br>
+<B>margin:</B>边距(预留)</br>
+<B>frame:</B>围绕container的路径</br>
+<B>handler:</B>点击和拖动的事件处理者</br>
+<B>rx:</B>鼠标相对容器x坐标</br>
+<B>ry:</B>鼠标相对容器y坐标</br>
+<B>RX:</B>容器相对父容器的X坐标</br>
+<B>RY:</B>容器相对父容器的Y坐标</br>
+<B>parent:</B>父容器</br>
+<B>imgs:</B>容器里的图片Array</br>
+<B>rects:</B>容器里的图形Array</br>
+<B>texts:</B>容器里的文字Array</br>
+<B>containers:</B>容器里的容器集合</br>
+<B>lines:</B>容器上连的线集合</br>
+<B>Handler():</B>handler生成器(这个每次添加新元素都要重绘，需改为toFront)</br>
+<B>setHandler():</B>设置Handler</br>
+<B>setBBox():</B>设置BBox,建议所有获取容器的x、y、x2、y2、w、h都通过BBox</br>
+<B>addImg():</B>添加图片</br>
+<B>addRect():</B>添加图形</br>
+<B>addLine():</B>添加连线</br>
+<B>addText():</B>添加文字(rx为容器x中心)</br>
+<B>addContainer():</B>添加其他容器</br>
+<B>get():</B>还未实现(通过相应条件寻找容器中元素)</br>
+<B>bind():</B>在该对象上绑定的业务数据</br>
+<B>data():</B>获取绑定在该对象上的业务数据</br>
+<B>attr():</B>所有元素的attr(主要是x,y)</br>
+<B>getBBox():</B>得到容器的边界框(通过重写该方法可以设置边距)</br>
+<B>drag():</B>拖动</br>
+<B>edit():</B>(预留)</br>
+<B>remove():</B>删除</br>
+<B>getData():</B>序列化</br>
+<B>set():</B>(更名为add)解析json(container),调用生成函数生成容器内元素</br>
+
+<h2>Edit:编辑插件(使用工具式插件扩展到Container上)</h2>
+<B>E:</B>内部this变量</br>
+<B>con:</B>绑定的Container</br>
+<B>P:</B>编辑点集合,由8个不同位置的小圆点组成</br>
+<B>start():</B>拖拽开始的处理函数</br>
+<B>end():</B>拖拽结束的处理函数,预留</br>
+<B>edit():</B>拖拽编辑函数,留给外部重写编辑规则,本函数只给出改变Container的BBox的处理</br>
+<B>drag():</B>拖拽处理函数,参数为类Container对象,可使编辑点依附在类Container对象上(类Container对象只可drag,不可edit)</br>
+<B>hide():</B>当A地板或者DELETE掉依附对象的时候隐藏编辑点</br>
+
+<h2>Tiny:缩略图插件(将目标canvas缩小后投射到指定新区域)</h2>
+<B>T:</B>内部this变量</br>
+<B>maxCoe:</B>可放大最大倍数(图像最小)</br>
+<B>minCoe:</B>可缩小最大倍数(图形最大)</br>
+<B>zoomRadix:</B>变倍的基数</br>
+<B>area:</B>映射区域</br>
+<B>canvas:</B>本缩略图Canvas画布</br>
+<B>init():</B>初始化,内容映射，目标画布和映射画布的视窗设置,映射区域拖拽、放大、缩小、缩放比例控制、目标画布拖拽定义</br>
+<B>Area:</B>可拖拽映射区域</br>
+<B>refresh:</B>刷新目标画布内容到缩略图上</br>
+<B>zoom:</B>变倍处理函数</br>
+<B>move:</B>映射区域变化映射处理(变倍和放大缩小时候进行反映射)</br>
+</body>
